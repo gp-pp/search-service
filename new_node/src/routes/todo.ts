@@ -4,7 +4,7 @@ import { MeiliSearch } from 'meilisearch'
 const router = express.Router()
 const client = new MeiliSearch({ host: 'http://meilisearch:7700' })
 
-router.get('/api/todo', (req: Request, res: Response) => {
+router.get('/search/profiles', (req: Request, res: Response) => {
     const query = req.query
     const searchh = query.search
     client.index('data').search(`${searchh}`)
@@ -12,8 +12,12 @@ router.get('/api/todo', (req: Request, res: Response) => {
         .catch((error) => res.send(error))
 })
 
-router.post('api/todo', (req, res) => {
-    return res.send('new todo created')
+router.get('/search/papers', (req: Request, res: Response) => {
+    const query = req.query
+    const searchh = query.search
+    client.index('papers').search(`${searchh}`)
+        .then((data) => res.send(data))
+        .catch((error) => res.send(error))
 })
 
 export {router as todoRouter}
