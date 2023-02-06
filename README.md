@@ -12,6 +12,7 @@ The active endpoints are at ports 7700 and 3003:
 
 Send search queries using query parameters, for example:
 
-> localhost/3003/profiles?q=something
-> localhost/3003/papers?q=something
+> - localhost/3003/profiles?q=something
+> - localhost/3003/papers?q=something
+
 It will query the results with prof. Debdeep Mukhopadhyay at the top.
