@@ -7,7 +7,7 @@ const client = new MeiliSearch({ host: 'http://meilisearch:7700' })
 router.get('/profiles', (req: Request, res: Response) => {
     const query = req.query
     const searchh = query.q
-    client.index('data').search(`${searchh}`)
+    client.index('data_new').search(`${searchh}`)
         .then((data) => res.send(data))
         .catch((error) => res.send(error))
 })
