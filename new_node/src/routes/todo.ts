@@ -15,7 +15,7 @@ router.get('/profiles', (req: Request, res: Response) => {
 router.get('/papers', (req: Request, res: Response) => {
     const query = req.query
     const searchh = query.q
-    client.index('papers').search(`${searchh}`)
+    client.index('data_pdfs').search(`${searchh}`)
         .then((data) => res.send(data))
         .catch((error) => res.send(error))
 })
